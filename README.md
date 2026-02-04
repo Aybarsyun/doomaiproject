@@ -7,7 +7,7 @@ The agent uses a **Hybrid Architecture** combining:
 1.  **IMPALA-style ResNet** for deep visual feature extraction.
 2.  **Spatial Attention** to prioritize enemy locations.
 3.  **LSTM (RecurrentPPO)** to handle memory and partial observability.
-4.  **Nuclear Reward Shaping** to aggressively encourage combat.
+4.  **Reward Shaping** to encourage combat.
 
 ## Requirements / Prereqs
 
