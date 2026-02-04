@@ -1,4 +1,3 @@
-```markdown
 # Doom Hybrid Agent (IMPALA + LSTM + Attention)
 
 A high-performance Reinforcement Learning agent designed to solve the **VizDoom Deadly Corridor** scenario.
