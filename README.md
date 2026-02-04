@@ -1,18 +1,17 @@
-Installation
-Prerequisites
-Python 3.8+
 
-Linux/WSL (Required for VizDoom)
+## 🛠 Installation
 
-CUDA-capable GPU (Strongly Recommended)
+### Prerequisites
+* Python 3.8+
+* CUDA GPU (Strongly Recommended)
 
-Setup
-Bash
+### Setup
+```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/doom-transformer-rl.git
+git clone [https://github.com/your-username/doom-transformer-rl.git](https://github.com/your-username/doom-transformer-rl.git)
 cd doom-transformer-rl
 
-# 2. Install dependencies (Virtual Environment recommended)
+# 2. Install dependencies/libraries
 pip install gymnasium[box2d] stable-baselines3 torch torchvision opencv-python transformers shimmy
 
 # 3. Install VizDoom (System dependencies may be required)
