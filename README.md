@@ -8,9 +8,6 @@
 ### Setup
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/your-username/doom-transformer-rl.git](https://github.com/your-username/doom-transformer-rl.git)
-cd doom-transformer-rl
-
 # 2. Install dependencies/libraries
 pip install gymnasium[box2d] stable-baselines3 torch torchvision opencv-python transformers shimmy
 
