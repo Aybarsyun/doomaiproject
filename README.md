@@ -9,20 +9,19 @@ The agent uses a **Hybrid Architecture** combining:
 3.  **LSTM (RecurrentPPO)** to handle memory and partial observability.
 4.  **Nuclear Reward Shaping** to aggressively encourage combat.
 
-## 📋 Requirements
+## Requirements / Prereqs
 
 **System:**
 * Python 3.8+
-* Linux/WSL (Required for VizDoom)
-* CUDA-capable GPU
+* CUDA GPU
 
-**Dependencies:**
+**Libraries:**
 ```bash
 pip install gymnasium "gymnasium[box2d]" stable-baselines3 sb3-contrib vizdoom
 
 ```
 
-## 🧠 Architecture Details
+## Architecture Details
 
 The code implements a custom feature extractor (`HybridCNN`) and environment wrapper (`DoomHybridEnv`):
 
@@ -31,7 +30,7 @@ The code implements a custom feature extractor (`HybridCNN`) and environment wra
 * **Attention Mechanism:** A `SpatialAttention` module that applies a sigmoid gate to the feature map, allowing the agent to focus on specific regions (e.g., enemies at the end of the corridor).
 * **Memory:** `RecurrentPPO` (LSTM) maintains a hidden state to remember map layout and enemy positions over time.
 
-## ⚔️ Reward Shaping Logic
+##  Reward Shaping Logic
 
 The environment uses a custom "Nuclear" reward function to enforce aggressive behavior:
 
@@ -41,18 +40,18 @@ The environment uses a custom "Nuclear" reward function to enforce aggressive be
 * **Health Management:** Non-linear penalty for taking damage (taking 50+ dmg hurts significantly more than taking 5 dmg).
 * **Victory Bonus:** Massive reward scaled by difficulty and kill count.
 
-## 🚀 Training Curriculum
+##  Training Curriculum
 
-The agent trains through a 4-phase curriculum to gradually master the game:
-
-1. **Easy** (Difficulty 2): 300,000 steps
-2. **Medium** (Difficulty 3): 500,000 steps
-3. **Hard** (Difficulty 4): 800,000 steps
-4. **Nightmare** (Difficulty 5): 1,200,000 steps
+The agent trains through a 5-phase curriculum to gradually master the game:
+1. **Tutorial**(Difficulty 1): 200k steps
+2. **Easy** (Difficulty 2): 300k steps
+3. **Medium** (Difficulty 3): 500k steps
+4. **Hard** (Difficulty 4): 800k steps
+5. **Nightmare** (Difficulty 5): 1.2 mil steps
 
 **Total Training:** ~2.8 Million Steps
 
-## 🏃 How to Run
+## How to Run
 
 1. Ensure `deadly_corridor.cfg` and `deadly_corridor.wad` are in the project root.
 2. Run the script:
@@ -67,15 +66,11 @@ The script will generate:
 * `doom_hybrid_logs/`: Tensorboard metrics.
 * `doom_hybrid_models/`: Saved agent checkpoints (`.zip`) and normalization stats (`.pkl`).
 
-## 📊 Monitoring
+##  Monitoring
 
-Track Kills, Health, and Survival Time in real-time:
+To track kills, health, and survival time:
 
 ```bash
 tensorboard --logdir=doom_hybrid_logs
-
-```
-
-```
 
 ```
