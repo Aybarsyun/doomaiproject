@@ -1,5 +1,3 @@
-Here is a clean, simplified version of the README. It focuses strictly on what the code does and how to run it.
-
 ```markdown
 # Doom Hybrid Agent (IMPALA + LSTM + Attention)
 
