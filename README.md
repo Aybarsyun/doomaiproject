@@ -1,9 +1,9 @@
 
 # Doom Hybrid Agent (IMPALA + LSTM + Attention)
 
-This repository contains a high-performance Reinforcement Learning agent designed to solve the **VizDoom Deadly Corridor** scenario.
+This repository contains a high-performance Reinforcement Learning agent designed to solve the VizDoom Deadly Corridor scenario.
 
-The agent uses a **Hybrid Architecture** combining:
+The agent uses a Hybrid Architecture combining:
 1.  **IMPALA-style ResNet** for deep visual feature extraction.
 2.  **Spatial Attention** to prioritize enemy locations.
 3.  **LSTM (RecurrentPPO)** to handle memory and partial observability.
