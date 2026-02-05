@@ -32,8 +32,7 @@ The code implements a custom feature extractor (`HybridCNN`) and environment wra
 
 ##  Reward Shaping Logic
 
-The environment uses a custom "Nuclear" reward function to enforce aggressive behavior:
-
+The environment uses a custom reward function to encourage aggressive behavior:
 * **Kill Bonus:** Base +10.0, scaling with difficulty.
 * **Combo System:** +5.0 bonus for chaining kills quickly (<50 steps).
 * **Ammo Efficiency:** +1.0 for high accuracy shots, penalty for wasting ammo.
