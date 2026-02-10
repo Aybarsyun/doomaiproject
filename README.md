@@ -1,13 +1,13 @@
 
-# Doom Hybrid Agent (IMPALA + LSTM + Attention)
+# Doom Hybrid Agent
 
 This repository contains a high-performance Reinforcement Learning agent designed to solve the VizDoom Deadly Corridor scenario.
 
 The agent uses a Hybrid Architecture combining:
-1.  **IMPALA-style ResNet** for deep visual feature extraction.
+1.  **IMPALA ResNet** for deep visual feature extraction.
 2.  **Spatial Attention** to prioritize enemy locations.
 3.  **LSTM (RecurrentPPO)** to handle memory and partial observability.
-4.  **Reward Shaping** to encourage combat.
+4.  **Reward Shaping** to optimize impact.
 
 ## Requirements / Prereqs
 
@@ -25,7 +25,7 @@ pip install gymnasium "gymnasium[box2d]" stable-baselines3 sb3-contrib vizdoom
 
 The code implements a custom feature extractor (`HybridCNN`) and environment wrapper (`DoomHybridEnv`):
 
-* **Visual Backbone:** 3-layer CNN with Orthogonal Initialization (`gain=sqrt(2)`).
+* **CNN Architecture:** 3-layer CNN with Orthogonal Initialization (`gain=sqrt(2)`).
 * **Residual Blocks:** IMPALA-style residual connections to prevent vanishing gradients in deep layers.
 * **Attention Mechanism:** A `SpatialAttention` module that applies a sigmoid gate to the feature map, allowing the agent to focus on specific regions (e.g., enemies at the end of the corridor).
 * **Memory:** `RecurrentPPO` (LSTM) maintains a hidden state to remember map layout and enemy positions over time.
